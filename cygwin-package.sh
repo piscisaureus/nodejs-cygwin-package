@@ -10,10 +10,10 @@ RESOURCE_DIR=${SCRIPT_DIR}/resource
 TEMP_DIR=${SCRIPT_DIR}/tmp
 
 # path to the node directory root
-NODE_DIR=`cd "\`git rev-parse --git-dir\`/.."; pwd`
+NODE_DIR=`cd ${SCRIPT_DIR}/..; cd "\`git rev-parse --git-dir\`/.."; pwd`
 
 # name and path for the compiled zip package (without extensions)
-PACKAGE_NAME=`pwd`/nodejs-`git describe`-cygwin
+PACKAGE_NAME=`pwd`/nodejs-`cd ${NODE_DIR}; git describe`-cygwin
 
 # build node
 cd "${NODE_DIR}"
