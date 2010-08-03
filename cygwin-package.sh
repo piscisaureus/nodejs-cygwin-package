@@ -58,7 +58,6 @@ cp -L --target-directory="${TEMP_DIR}/bin" \
     cp.exe              \
     cygcheck.exe        \
     cygpath.exe         \
-    cygrunsrv.exe       \
     d2u.exe             \
     date.exe            \
     diff.exe            \
@@ -75,7 +74,6 @@ cp -L --target-directory="${TEMP_DIR}/bin" \
     mkpasswd.exe        \
     mount.exe           \
     mv.exe              \
-    nano.exe            \
     printenv.exe        \
     ps.exe              \
     pwd.exe             \
