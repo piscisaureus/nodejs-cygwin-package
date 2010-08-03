@@ -15,21 +15,15 @@ NODE_DIR=`cd ${SCRIPT_DIR}/..; cd "\`git rev-parse --git-dir\`/.."; pwd`
 # name and path for the compiled zip package (without extensions)
 PACKAGE_NAME=`pwd`/nodejs-`cd ${NODE_DIR}; git describe`-cygwin
 
-# build node
-cd "${NODE_DIR}"
-#./configure
-#make
-
-# folder struction
+# folder structure
 mkdir -p \
     "${TEMP_DIR}"                \
     "${TEMP_DIR}/bin"            \
     "${TEMP_DIR}/etc"            \
-    "${TEMP_DIR}/etc/terminfo/c" \
     "${TEMP_DIR}/home"           \
     "${TEMP_DIR}/node"           \
     "${TEMP_DIR}/node/bin"       \
-    "${TEMP_DIR}/node/doc"           \
+    "${TEMP_DIR}/node/doc"       \
     "${TEMP_DIR}/node/lib"       \
     "${TEMP_DIR}/tmp"            \
     "${TEMP_DIR}/usr"
@@ -37,7 +31,7 @@ mkdir -p \
 # helper command shell scripts
 cd "${RESOURCE_DIR}"
 cp -L --target-directory="${TEMP_DIR}" \
-    bash.cmd            \
+    bash.cmd                     \
     node.cmd
 
 # config files
