@@ -89,27 +89,18 @@ cp -L --target-directory="${TEMP_DIR}/bin" \
 # cygwin shared libraries
 cd /bin
 cp -L --target-directory="${TEMP_DIR}/bin" \
-    cygcrypt-0.dll      \
+    cygattr-1.dll       \
     cygcrypto-0.9.8.dll \
     cyggcc_s-1.dll      \
     cygiconv-2.dll      \
-    cygintl-1.dll       \
-    cygintl-2.dll       \
-    cygintl-3.dll       \
     cygintl-8.dll       \
-    cygminires.dll      \
-    cygncurses-8.dll    \
     cygncurses-9.dll    \
     cygncurses-10.dll   \
-    cygpcre.dll         \
     cygpcre-0.dll       \
     cygpopt-0.dll       \
     cygreadline7.dll    \
     cygssl-0.9.8.dll    \
-    cygssp-0.dll        \
-    cygstdc++-6.dll     \
     cygwin1.dll         \
-    cygwrap-0.dll       \
     cygz.dll
 
 # create zip archive
