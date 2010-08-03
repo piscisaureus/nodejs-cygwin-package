@@ -12,8 +12,11 @@ TEMP_DIR=${SCRIPT_DIR}/tmp
 # path to the node directory root
 NODE_DIR=`cd ${SCRIPT_DIR}/..; cd "\`git rev-parse --git-dir\`/.."; pwd`
 
-# name and path for the compiled zip package (without extensions)
-PACKAGE_NAME=`pwd`/nodejs-`cd ${NODE_DIR}; git describe`-cygwin
+# zip package should go into current working directory
+PACKAGE_DIR=`pwd`
+
+# name for the compiled zip package (without extensions)
+PACKAGE_NAME=nodejs-`cd ${NODE_DIR}; git describe`-cygwin
 
 # folder structure
 mkdir -p \
@@ -105,8 +108,9 @@ cp -L --target-directory="${TEMP_DIR}/bin" \
 
 # create zip archive
 cd "${TEMP_DIR}"
-rm -f "${PACKAGE_NAME}.zip" 
-zip -r9q "${PACKAGE_NAME}.zip" .
+rm -f "${PACKAGE_DIR}/${PACKAGE_NAME}.zip" 
+zip -r9q "${PACKAGE_DIR}/${PACKAGE_NAME}.zip" .
+echo Created ${PACKAGE_NAME}.zip
 
 # drop temp dir
 rm -rf "${TEMP_DIR}"
